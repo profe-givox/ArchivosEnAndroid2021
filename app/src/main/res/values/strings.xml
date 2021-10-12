@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">ArchivosEnAndroid</string>
+    <string name="internal">Internal</string>
+    <string name="external_storage">External Storage</string>
+</resources>
