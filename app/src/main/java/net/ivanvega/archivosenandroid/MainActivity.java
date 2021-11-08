@@ -10,6 +10,7 @@ import android.Manifest;
 import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Environment;
 import android.util.Log;
 import android.widget.Button;
 import android.widget.EditText;
@@ -91,8 +92,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void abrirArchivoExterno() {
-        File pathExternal =  getExternalFilesDir(null);
-        File file = new File(pathExternal, "MiArchivo.txt");
+        //File pathExternal =  getExternalFilesDir(null);
+        File pathExternal =
+                Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOCUMENTS );
+        File file = new File(pathExternal, "MiArchivoSD.txt");
 
         try {
             FileInputStream fileInputStream = new FileInputStream(file);
@@ -153,8 +156,10 @@ public class MainActivity extends AppCompatActivity {
 
         getExternalFilesDir(null);
 
-        File pathExternal =  getExternalFilesDir(null);
-        File file = new File(pathExternal, "MiArchivo.txt");
+        //File pathExternal =  getExternalFilesDir(null);
+        File pathExternal =
+                Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOCUMENTS);
+        File file = new File(pathExternal, "MiArchivoSD.txt");
 
         try {
             FileOutputStream fileOutputStream = new FileOutputStream(file, true );
@@ -176,8 +181,6 @@ public class MainActivity extends AppCompatActivity {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
-
     }
 
 }
